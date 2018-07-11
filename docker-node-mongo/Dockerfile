@@ -1,7 +1,5 @@
 FROM node:alpine
 
-MAINTAINER Adrián García Espinosa "age.apps.dev@gmail.com"
-
 # Create app directory
 RUN mkdir /server
 
@@ -15,5 +13,4 @@ COPY app/package.json /server/package.json
 RUN npm install
 
 COPY app /server
-
-CMD npm start
+CMD nodemon ./bin/www
